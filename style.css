@@ -1,0 +1,93 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.upper-part {
+    width: 100%;
+    height: 10%;
+    background-color: #274029;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#description {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Tilt Neon', sans-serif;
+    font-size: 40px;
+}
+
+#books {
+    width: 9em;
+}
+
+.lower-part {
+    width: 100%;
+    height: 90%;
+    background-color: #87c38f;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#open-form {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #274029;
+}
+
+#plus-sign {
+    font-size: 40px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.book-form {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Tilt Neon', sans-serif;
+    background-color: #bcb8b1;
+    padding: 20px;
+    border-radius: 15px;
+
+}
+
+input {
+    margin: 5px;
+}
+
+#new-book {
+    font-size: 30px;
+    text-align: center;
+}
+
+#add-book {
+    margin-left: 25px;
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.book-form {
+    display: none;
+}
