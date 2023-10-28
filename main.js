@@ -1,37 +1,55 @@
-const myLibrary = []
+const myLibrary = [];
+
+let openFormButton = document.querySelector('#open-form')
+let bookForm = document.querySelector('.book-form')
+let body = document.querySelector('body')
+let addBookButton = document.querySelector('#add-book')
 
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
     this.pages = pages
     this.read = read
-    this.info = function () {
-        if (this.read == 'read') {
-            return console.log(`The ${this.title} by ${this.author}, ${this.pages} pages,read`)
-        } else {
-            return console.log(`The ${this.title} by ${this.author}, ${this.pages} pages, not read yet`)
-        }
+}
+
+// function render() {
+//     let eachBook = document.querySelector('.bookCard')
+//     for (let i = 0; i < myLibrary.length; i++) {
+//         console.log(myLibrary[i]);
+//     }
+// }
+
+function addBookToLibrary() {
+
+    let title = document.querySelector('#title').value
+    let author = document.querySelector('#author').value
+    let pages = document.querySelector('#pages').value
+    let isRead = document.querySelector('input[name="radio-options"]:checked');
+    if (isRead) {
+        let read = isRead.value;
+
+        let newBook = new Book(title, author, pages, read)
+        myLibrary.push(newBook)
+        console.log(newBook)
+        // render()
     }
 }
 
-let book1 = new Book("Mamba Mentality", "Kobe Bryant", '319', 'read')
-let book2 = new Book("LOTR Two Towers", "J.R.R Tokien", '462', 'not read')
+addBookButton.addEventListener('click', (event) => {
+    event.preventDefault()
+    addBookToLibrary()
+})
 
-book1.info()
-book2.info()
-
-let openFormButton = document.querySelector('#open-form')
-let bookForm = document.querySelector('.book-form')
-let body = document.querySelector('body')
-
-openFormButton.addEventListener('click', () => {
+openFormButton.addEventListener('click', (event) => {
     bookForm.style.display = 'block';
     event.stopPropagation();
 })
 
 body.addEventListener('click', (event) => {
-    // Check if the clicked element is not the form or one of its descendants
     if (!bookForm.contains(event.target)) {
-        bookForm.style.display = 'none';
+        bookForm.style.display = 'none'
     }
-});
+})
+
+
+
